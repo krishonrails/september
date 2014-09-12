@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @player.name %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @player.dob %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @player.age %>
+</p>
+
+<p>
+  <b>Type of sport:</b>
+  <%= @player.type_of_sport %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @player.country %>
+</p>
+
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>
