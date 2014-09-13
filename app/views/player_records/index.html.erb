@@ -1,5 +1,4 @@
 <h1>Listing player_records</h1>
-
 <table>
   <tr>
     <th>Records</th>
@@ -12,10 +11,11 @@
 <% @player_records.each do |player_record| %>
   <tr>
     <td><%= player_record.records %></td>
-    <td><%= player_record.player %></td>
-    <td><%= link_to 'Show', player_record %></td>
-    <td><%= link_to 'Edit', edit_player_record_path(player_record) %></td>
-    <td><%= link_to 'Destroy', player_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= player_record.player_id %></td>
+    <td>
+    <% if can? :update,:delete, PlayerRecord%>
+    <%= link_to 'Edit', edit_player_record_path(player_record) %>
+    <%= link_to 'Destroy', player_record, method: :delete, data: { confirm: 'Are you sure?' } %><%end%></td>
   </tr>
 <% end %>
 </table>

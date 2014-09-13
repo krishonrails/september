@@ -6,7 +6,7 @@ gem 'rails', '3.2.16'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,3 +36,4 @@ gem 'jquery-rails'
 #gem 'better_errors', '~> 2.0.0'
 # To use debugger
  gem 'debugger'
+gem "cancan"

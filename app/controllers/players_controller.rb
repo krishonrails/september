@@ -1,6 +1,8 @@
 class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
+  load_and_authorize_resource
+  # skip_authorize_resource :only => :show
   def index
     @players = Player.all
 
@@ -24,8 +26,7 @@ class PlayersController < ApplicationController
   # GET /players/new
   # GET /players/new.json
   def new
-    @player = Player.new
-
+     @player = Player.new
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @player }
@@ -44,7 +45,7 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
-        format.html { redirect_to @player, notice: 'Player was successfully created.' }
+        format.html { redirect_to players_path, notice: 'Player was successfully created.' }
         format.json { render json: @player, status: :created, location: @player }
       else
         format.html { render action: "new" }

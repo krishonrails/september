@@ -17,11 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :dob %><br />
-    <%= f.date_select :dob %>
-  </div>
-  <div class="field">
-    <%#= f.label :age %><br />
-    <%#= f.date_select :age %>
+    <%= f.date_select :dob ,start_year: 1975%>
   </div>
   <div class="field">
     <%= f.label :type_of_sport %><br />

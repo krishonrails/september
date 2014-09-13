@@ -1,6 +1,8 @@
 class PlayerRecordsController < ApplicationController
   # GET /player_records
   # GET /player_records.json
+  load_and_authorize_resource
+  skip_authorize_resource :only => :show
   def index
     @player_records = PlayerRecord.all
 
@@ -57,7 +59,6 @@ class PlayerRecordsController < ApplicationController
   # PUT /player_records/1.json
   def update
     @player_record = PlayerRecord.find(params[:id])
-
     respond_to do |format|
       if @player_record.update_attributes(params[:player_record])
         format.html { redirect_to @player_record, notice: 'Player record was successfully updated.' }

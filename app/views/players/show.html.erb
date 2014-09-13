@@ -3,28 +3,23 @@
 <p>
   <b>Name:</b>
   <%= @player.name %>
-</p>
 
-<p>
-  <b>Dob:</b>
-  <%= @player.dob %>
-</p>
-
-<p>
-  <b>Age:</b>
-  <%= @player.age %>
-</p>
-
-<p>
   <b>Type of sport:</b>
   <%= @player.type_of_sport %>
-</p>
 
-<p>
   <b>Country:</b>
   <%= @player.country %>
 </p>
+<p>
+<% record = PlayerRecord.find_by_player_id(@player.id)%>
+<% if !record.nil?%>
+<%=record.records%>
+<%else%>
+Not Available
+<%end%>
+</p>
 
-
-<%= link_to 'Edit', edit_player_path(@player) %> |
+<% if can? :update,:delete, Player%>
+<%= link_to 'Edit', edit_player_path(@player) %> 
+<%end%>
 <%= link_to 'Back', players_path %>

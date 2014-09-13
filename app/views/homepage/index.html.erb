@@ -1,10 +1,11 @@
 
-<div id="div1">
+<div id="div1" style='display:none;'>
   <h1>Players</h1>
   <%= render :template => 'players/index'%>
 </div>
 <div class="div3">
-  <%= render :template => 'players/index'%>
+  <a href="#">Please click here to list all the players</a>
+  <%#= render :template => 'players/index'%>
   <%#= redirect_to 'new_player_record' %>
 </div>
 <div id="div3">
@@ -14,22 +15,23 @@
 
 <style>
     html, body { height: 100%; padding: 0; margin: 0; }
-    div { }
+   /* div { }*/
     .div2 { background: #DDD;
         width: 50%;
         height: 50%;
         float: left;
     }
-    #div1 { background: #AAA;width: 50%;
+    /*#div1 { background: #AAA;width: 50%;
         height: 50%;
         float: left; }
     #div3 { background: #777; }
-    #div4 { background: #444; }
+    #div4 { background: #444; }*/
 </style>
 <script>
 $(document).ready(function(){
-        $('#new-player').on('click',function(){
-            $('.div3').addClass('div2');
+        $('.div3').on('click',function(){
+            $('#div1').show();
+            $('.div3').hide();
         });
 });
 </script>
