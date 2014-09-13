@@ -28,6 +28,6 @@ development:
  encoding: utf8
  database: new-app
  username: root
- password: india
+ password: qazplm123
  host: localhost
  port: 3306
